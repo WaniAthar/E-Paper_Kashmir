@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'theme_provider.dart';
 import 'themes.dart';
 
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();

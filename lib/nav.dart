@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'homepage.dart';
 import 'contact_us.dart';
 import 'Webview.dart';
@@ -22,13 +23,13 @@ class _NavigationState extends State<Navigation> {
       body: screens[index],
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
-          indicatorColor: Colors.deepPurple[100],
+          indicatorColor: Colors.grey.shade300,
           labelTextStyle: MaterialStateProperty.all(
               TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
         ),
         child: NavigationBar(
           height: 60,
-          backgroundColor: Colors.deepPurple[50],
+          backgroundColor: Colors.grey.shade100,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           selectedIndex: index,
           onDestinationSelected: (index) => setState(() => this.index = index),
@@ -38,7 +39,7 @@ class _NavigationState extends State<Navigation> {
               label: 'Home',
             ),
             NavigationDestination(
-              icon: Icon(Icons.email_outlined),
+              icon: Icon(Icons.contact_support_sharp),
               label: 'Contact',
             ),
           ],

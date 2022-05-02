@@ -1,11 +1,12 @@
 import 'package:contactus/contactus.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContactsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
-      backgroundColor: Colors.deepPurple[100],
+      backgroundColor: Colors.white54,
       body: ContactUs(
         
         cardColor: Colors.white,

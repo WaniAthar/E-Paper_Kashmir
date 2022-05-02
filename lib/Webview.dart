@@ -45,7 +45,7 @@ class WebViewPageState extends State<WebViewPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(title),
-          backgroundColor: Colors.deepPurple[100],
+          backgroundColor: Colors.white,
           titleTextStyle: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
@@ -77,7 +77,7 @@ class WebViewPageState extends State<WebViewPage> {
             position == 1
                 ? Container(
                   child: LinearProgressIndicator(
-                      color: Colors.deepPurple,
+                      color: Colors.grey[900],
                       backgroundColor: Colors.deepPurple[100],
                     ),
                 ): Column()

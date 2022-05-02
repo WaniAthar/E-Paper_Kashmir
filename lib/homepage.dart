@@ -76,14 +76,16 @@ class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[50],
+      backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: [
           //sliver app bar
           SliverAppBar(
-            iconTheme: IconThemeData(
-              color: Colors.grey[900],
+            title: Text(
+              "E-Paper Kashmir",
+              style: TextStyle(color: Colors.black),
             ),
+            iconTheme: IconThemeData(),
             actions: <Widget>[
               PopupMenuButton<String>(
                   onSelected: onSelect,
@@ -96,48 +98,40 @@ class _HomePage extends State<HomePage> {
                     }).toList();
                   }),
             ],
-            backgroundColor: Colors.deepPurple[100],
-            shadowColor: Colors.deepPurple[100],
+            backgroundColor: Colors.white,
+            // shadowColor: Colors.deepPurple[100],
             centerTitle: true,
-            expandedHeight: 300,
+            expandedHeight: 150,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
-                color: Colors.deepPurple[50],
+                color: Colors.white,
                 child: Column(
                   children: [
-                    Icon(
-                      Icons.arrow_upward_rounded,
-                      size: 100,
-                      color: Colors.grey[900],
+                    Container(
+                      height: 25,
                     ),
-                    Title(
-                      child: Text("Swipe Up",
-                          style: TextStyle(
-                            fontSize: 50,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.grey[900],
-                            fontFamily: GoogleFonts.poppins().fontFamily,
-                          )),
-                      color: Colors.white,
-                    ),
+                    neumorphismText(context, "Swipe Up"),
+                    // Title(
+                    //   child: Text("Swipe Up",
+                    //       style: TextStyle(
+                    //         fontSize: 50,
+                    //         fontWeight: FontWeight.w700,
+                    //         fontFamily: GoogleFonts.poppins().fontFamily,
+                    //       )),
+                    //   color: Colors.white,
+                    // ),
                   ],
                 ),
                 padding: EdgeInsets.only(top: 60.0),
               ),
-              title: Text('E-PAPER Kashmir',
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: GoogleFonts.poppins().fontFamily,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[900],
-                      shadows: [
-                        Shadow(
-                          color: Colors.grey.shade700,
-                          blurRadius: 15.0,
-                          offset: Offset(5.0, 5.0),
-                        ),
-                      ])),
+              // title: Text('E-PAPER Kashmir',
+              //     style: TextStyle(
+              //       fontSize: 20.0,
+              //       fontFamily: GoogleFonts.poppins().fontFamily,
+              //       fontWeight: FontWeight.bold,
+              //       color: Colors.grey[900],
+              //     )),
               centerTitle: true,
             ),
           ),
@@ -182,29 +176,29 @@ class _HomePage extends State<HomePage> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -239,29 +233,29 @@ class _HomePage extends State<HomePage> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -269,6 +263,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -308,29 +303,29 @@ class _HomePage extends State<HomePage> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -338,6 +333,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -359,32 +355,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/dailychattan.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -392,6 +388,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -427,32 +424,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/aftaab.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -460,6 +457,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -482,32 +480,32 @@ class _HomePage extends State<HomePage> {
                     width: 200,
                     child:
                         Image(image: AssetImage('images/GreaterKashmir.png')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -515,6 +513,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -551,32 +550,32 @@ class _HomePage extends State<HomePage> {
                     width: 200,
                     child:
                         Image(image: AssetImage('images/kashmirobserver.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -584,6 +583,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -605,32 +605,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/roshni.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -638,6 +638,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -674,32 +675,32 @@ class _HomePage extends State<HomePage> {
                     width: 200,
                     child:
                         Image(image: AssetImage('images/KashmirTimesLogo.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -707,6 +708,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -728,32 +730,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/lazwal.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -761,6 +763,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -796,32 +799,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/northlines.png')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -829,6 +832,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -850,32 +854,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/srinagar_news.png')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -883,6 +887,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -918,32 +923,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/stateobserver.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -951,6 +956,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -972,32 +978,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/statetimes.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -1005,6 +1011,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -1040,32 +1047,32 @@ class _HomePage extends State<HomePage> {
                     height: 100,
                     width: 200,
                     child: Image(image: AssetImage('images/themirror.jpg')),
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(color: Colors.grey.shade300),
                       color: Colors.white,
-                      shape: BoxShape.rectangle,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10,
-                            offset: Offset(3.0, 3.0)),
+                            blurRadius: 15,
+                            offset: const Offset(3.0, 3.0)),
                         BoxShadow(
-                            color: Colors.grey.shade400,
+                            color: Colors.grey.shade900,
                             spreadRadius: 0.0,
-                            blurRadius: 10 / 2.0,
+                            blurRadius: 15 / 2.0,
                             offset: Offset(3.0, 3.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15,
+                            offset: Offset(-5.0, -5.0)),
                         BoxShadow(
                             color: Colors.white,
-                            spreadRadius: 2.0,
-                            blurRadius: 10 / 2,
-                            offset: Offset(-3.0, -3.0)),
+                            spreadRadius: 5.0,
+                            blurRadius: 15 / 2,
+                            offset: Offset(-5.0, -5.0)),
                       ],
                     ),
                   ),
@@ -1073,6 +1080,7 @@ class _HomePage extends State<HomePage> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
             child: Consumer<AdProvider>(
               builder: (context, AdProvider, child) {
@@ -1091,7 +1099,50 @@ class _HomePage extends State<HomePage> {
       ),
     );
   }
+
+  Widget neumorphismText(BuildContext context, Text_) {
+    final elevation = 3.0;
+    return Text(
+      Text_,
+      style: TextStyle(
+          fontSize: 60.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.grey.shade50,
+          shadows: [
+            Shadow(
+                color: Colors.grey.shade400,
+                offset: Offset(3.0, 3.0),
+                blurRadius: elevation),
+            Shadow(
+                color: Colors.white,
+                offset: Offset(-3.0, 3.0),
+                blurRadius: elevation),
+          ]),
+    );
+  }
+
+  Widget neumorphismTextTitle(BuildContext context, Text_) {
+    final elevation = 3.0;
+    return Text(
+      Text_,
+      style: TextStyle(
+          fontSize: 25.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black45,
+          shadows: [
+            Shadow(
+                color: Colors.grey.shade400,
+                offset: Offset(3.0, 3.0),
+                blurRadius: elevation),
+            Shadow(
+                color: Colors.white60,
+                offset: Offset(-3.0, 3.0),
+                blurRadius: elevation),
+          ]),
+    );
+  }
 }
+
 
 
 /*
