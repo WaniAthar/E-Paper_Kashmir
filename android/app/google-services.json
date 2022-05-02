@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1017927229516",
+    "project_id": "epaper-kashmir",
+    "storage_bucket": "epaper-kashmir.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017927229516:android:253e586c0361eb176c94e9",
+        "android_client_info": {
+          "package_name": "com.spextek.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017927229516-d3ifi81dpv56m602ammmg5kea973lnvl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv1lCPmS_Mp6fyEClIitREp4kaKZvdg6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017927229516-d3ifi81dpv56m602ammmg5kea973lnvl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
