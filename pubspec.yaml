@@ -85,10 +85,10 @@ flutter:
     - images/statetimes.jpg
     - images/themirror.jpg
     - images/uzma-logo.jpg
-    - images/logo.png
-    - images/logojpg.png
+    - images/logojpg.jpg
     - images/epaper.png
     - images/logo.jpg
+    - images/epaper2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

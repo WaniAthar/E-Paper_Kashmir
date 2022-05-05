@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:news/ad_provider.dart';
-import 'nav.dart';
 import 'package:provider/provider.dart';
 import 'theme_provider.dart';
 import 'themes.dart';
+import 'splash.dart';
 
 
 void main() {
@@ -39,7 +39,7 @@ class Home extends State<MyApp> {
           theme: lightTheme,
           darkTheme: darkTheme,
           // ignore: prefer_const_constructors
-          home: Navigation(),
+          home: Splash(),
         );
       }),
     );
