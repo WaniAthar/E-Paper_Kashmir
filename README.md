@@ -10,21 +10,23 @@ run pubsec.yaml file to get started by using the below command.
 "flutter pub get"
 You can compile it into IOS, Android, Windows and Web for now
 *these are the following commands to compile*
+
 _For Android_
 
-**flutter build apk --split-per-abi**
+```flutter build apk --split-per-abi```
 
 _For IOS_
 
-**flutter build ios**
+```flutter build ios```
 
 _For Windows_
 
-**flutter build windows**
+```flutter build windows```
+### _Windows Sdk_ needed to compile for windows
 
 _For web_
 
-**flutter build web**
+```flutter build web```
 
 
 
